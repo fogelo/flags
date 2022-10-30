@@ -1,0 +1,57 @@
+import React, {useEffect, useState} from "react";
+import styled from "styled-components";
+import {Container} from "./Container";
+import {IoMoon} from "react-icons/io5";
+
+
+const HeaderEl = styled.header`
+  box-shadow: var(--shadow);
+  background-color: var(--ui-base-color);
+`
+
+//Чтобы позиционировать дочерние элементы внутри себя. Отвечает в общем за положение элементов
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+`
+const Title = styled.a.attrs({
+    href: "/",
+})`
+  color: var(--text-color);
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+`
+
+const ModeSwitcher = styled.div`
+
+
+`
+
+const Header = () => {
+
+    const [theme, setTheme] = useState("light")
+
+    useEffect(() => {
+        document.body.setAttribute("data-theme", theme)
+    }, [theme])
+
+    const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light")
+
+    return (
+        <HeaderEl>
+            <Container>
+                <Wrapper>
+                    <Title>Where is the world?</Title>
+                    <ModeSwitcher onClick={toggleTheme}>
+                        {theme === "light" ? <IoMoon/> : <IoMoon/>}
+                    </ModeSwitcher>
+                </Wrapper>
+            </Container>
+        </HeaderEl>
+    );
+};
+
+export default Header;
