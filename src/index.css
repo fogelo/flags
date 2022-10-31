@@ -33,3 +33,11 @@ body[data-theme="light"] {
 
   --shadow: rgba(149, 157, 165, 0.2) 0 8px 8px;
 }
+
+body {
+  margin: 0;
+  font-family: var(--family);
+  color: var(--text-color);
+  font-weight: var(--fw-light);
+  background-color: var(--bg-color);
+}

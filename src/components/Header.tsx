@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {Container} from "./Container";
-import {IoMoon} from "react-icons/io5";
+import {IoMoon, IoMoonOutline} from "react-icons/io5";
 
 
 const HeaderEl = styled.header`
@@ -15,6 +15,12 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
+
+  color: var(--text-color);
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
 `
 const Title = styled.a.attrs({
     href: "/",
@@ -26,8 +32,9 @@ const Title = styled.a.attrs({
 `
 
 const ModeSwitcher = styled.div`
-
-
+  display: flex;
+  gap: 0.5rem;
+  text-transform: capitalize;
 `
 
 const Header = () => {
@@ -46,7 +53,8 @@ const Header = () => {
                 <Wrapper>
                     <Title>Where is the world?</Title>
                     <ModeSwitcher onClick={toggleTheme}>
-                        {theme === "light" ? <IoMoon/> : <IoMoon/>}
+                        {theme === "light" ? <IoMoon/> : <IoMoonOutline/>}
+                        <span>{theme} theme</span>
                     </ModeSwitcher>
                 </Wrapper>
             </Container>
