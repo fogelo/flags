@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {Container} from "./Container";
 import {IoMoon, IoMoonOutline} from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 
 const HeaderEl = styled.header`
@@ -22,8 +23,8 @@ const Wrapper = styled.div`
   font-weight: var(--fw-bold);
   cursor: pointer;
 `
-const Title = styled.a.attrs({
-    href: "/",
+const Title = styled(Link).attrs({
+    to: "/",
 })`
   color: var(--text-color);
   font-size: var(--fs-sm);

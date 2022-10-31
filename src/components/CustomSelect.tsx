@@ -15,7 +15,8 @@ const CustomSelect = styled(Select).attrs({
             padding: "0.25rem",
             border: "none",
             boxShadow: "var(--shadow)",
-            height: "50px"
+            height: "50px",
+            borderRadius: "var(--radii)"
         }),
         //option - стили для опций
         option: (provided, state) => ({
